@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not isinstance(roman_string, str) or roman_string is None:
+    if type(roman_string) is not str or roman_string is None:
         return 0
 
     roman_dict = {
@@ -13,17 +13,11 @@ def roman_to_int(roman_string):
             'M': 1000
     }
 
+    prev = [roman_dict[x] for x in roman_dict]
     result = 0
-    prev = None
 
-    for letter in roman_string:
-        if letter not in roman_dict:
-            return 0
-        value = roman_dict[letter]
-
-        if prev is not Nine and prev < value:
-            result -= prev
-            value -= prev
-        result += value
-        prev = value
+    for letter in range(len(prev)):
+        result += prev[letter]
+        if prev[letter - 1] < result[letter] and letter != 0:
+            result -= (prev[letter -1] + prev[letter - 1])
     return result
