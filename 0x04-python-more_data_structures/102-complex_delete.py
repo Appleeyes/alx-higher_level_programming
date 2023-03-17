@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 def complex_delete(a_dictionary, value):
     keys_del = []
     for key in a_dictionary:
