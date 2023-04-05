@@ -1,30 +1,37 @@
 #!/usr/bin/python3
+"""define a rectangle class"""
 
 class Rectangle:
+    """the rectangle class"""
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        """initialization for the class"""
+        self._width = width
+        self._height = height
     
     @property
     def width(self):
-        return self.__width
+        """private instance getter for width attribute"""
+        return self._width
     
     @width.setter
     def width(self, value):
-        if type(value) is not int:
+        """private instance setter for width attribute"""
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        self._width = value
     
     @property
     def height(self):
-        return self.__height
+        """private instance getter for height attribute"""
+        return self._height
     
     @height.setter
     def height(self, value):
-        if type(value) is not int:
+        """private instance setter for height attribute"""
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        self._height = value
