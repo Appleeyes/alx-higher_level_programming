@@ -1,7 +1,3 @@
-#!user/bin/python3
-'''an empty class that defines a rectangle'''
-
-
+#!/usr/bin/python3
 class Rectangle:
-    '''the empty method of the class'''
     pass
