@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-
+"""
+challenge of placing N non-attacking queens on an N×N chessboard
+"""
 
 import sys
 
 
 def nqueens(n):
+    """takes an integer n as its input and prints every possible solution"""
     if not isinstance(n, int):
         print("N must be a number")
         sys.exit(1)
@@ -13,6 +16,7 @@ def nqueens(n):
         sys.exit(1)
 
     def solve(queens, xy_diff, xy_sum):
+        """recursive function that takes in lists"""
         x = len(queens)
         if x == n:
             solutions.append(queens)
@@ -28,6 +32,7 @@ def nqueens(n):
 
 
 if __name__ == "__main__":
+    """checks if the program is being run as the main module"""
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
