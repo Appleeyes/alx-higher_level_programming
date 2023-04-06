@@ -5,8 +5,6 @@ challenge of placing N non-attacking queens on an N×N chessboard
 
 import sys
 
-
-import sys
 if len(sys.argv) is 1:
     print("Usage: nqueens N")
     exit(1)
