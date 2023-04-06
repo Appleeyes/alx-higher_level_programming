@@ -3,6 +3,7 @@
 
 import sys
 
+
 def nqueens(n):
     if not isinstance(n, int):
         print("N must be a number")
@@ -24,6 +25,7 @@ def nqueens(n):
     solve([], [], [])
     for sol in solutions:
         print(sol)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
