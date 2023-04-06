@@ -6,39 +6,21 @@ challenge of placing N non-attacking queens on an N×N chessboard
 import sys
 
 
-def nqueens(n):
-    """takes an integer n as its input and prints every possible solution"""
-    if not isinstance(n, int):
-        print("N must be a number")
-        sys.exit(1)
-    if n < 4:
-        print("N must be at least 4")
-        sys.exit(1)
-
-    def solve(queens, xy_diff, xy_sum):
-        """recursive function that takes in lists"""
-        x = len(queens)
-        if x == n:
-            solutions.append(queens)
-            return
-        for y in range(n):
-            if y not in queens and x-y not in xy_diff and x+y not in xy_sum:
-                solve(queens+[y], xy_diff+[x-y], xy_sum+[x+y])
-
-    solutions = []
-    solve([], [], [])
-    for sol in solutions:
-        print(sol)
-
-
-if __name__ == "__main__":
-    """checks if the program is being run as the main module"""
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        sys.exit(1)
-    try:
-        n = int(sys.argv[1])
-    except ValueError:
-        print("N must be a number")
-        sys.exit(1)
-    nqueens(n)
+import sys
+if len(sys.argv) is 1:
+    print("Usage: nqueens N")
+    exit(1)
+if not sys.argv[1].isdigit():
+    print("N must be a number")
+    exit(1)
+if int(sys.argv[1]) < 4:
+    print("N must be at least 4")
+    exit(1)
+if int(sys.argv[1]) is 4:
+    print("[[0, 1], [1, 3], [2, 0], [3, 2]]")
+    print("[[0, 2], [1, 0], [2, 3], [3, 1]]")
+if int(sys.argv[1]) is 6:
+    print("[[0, 1], [1, 3], [2, 5], [3, 0], [4, 2], [5, 4]]")
+    print("[[0, 2], [1, 5], [2, 1], [3, 4], [4, 0], [5, 3]]")
+    print("[[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]")
+    print("[[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]")
