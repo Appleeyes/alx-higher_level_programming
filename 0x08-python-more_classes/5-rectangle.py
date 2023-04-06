@@ -64,7 +64,7 @@ class Rectangle:
     def __repr__(self):
         """returns a string representation of the rectangle"""
         return f'Rectangle({self.__width}, {self.__height})'
-        
+
     def __del__(self):
-    """method is called when an instance of Rectangle is deleted"""
+        """method is called when an instance of Rectangle is deleted"""
         print("Bye rectangle...")
