@@ -1,1 +1,1 @@
-This directory will contain all 0x0A-python-inheritance tasks
+# 0x0A. Python - Inheritance
